@@ -10,3 +10,12 @@ def generate_password(length):
         password += random.choice(characters)
 
     return password
+
+
+length = int(input("Enter password length: "))
+
+if length < 4:
+    print("Password length should be at least 4.")
+else:
+    password = generate_password(length)
+    print("Generated Password:", password)
