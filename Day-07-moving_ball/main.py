@@ -16,3 +16,19 @@ ball = canvas.create_oval(
 x = 5
 
 
+def move_ball():
+    global x
+
+    canvas.move(ball, x, 0)
+
+    position = canvas.coords(ball)
+
+    if position[2] >= 500 or position[0] <= 0:
+        x = -x
+
+    root.after(30, move_ball)
+
+
+move_ball()
+
+root.mainloop()
